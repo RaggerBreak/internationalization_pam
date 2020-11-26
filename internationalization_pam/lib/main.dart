@@ -1,5 +1,5 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale('en'),
+      locale: Locale('pl'),
 
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -35,11 +35,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  Random random = Random();
+
   int _counter = 0;
+  double _money = 0.0;
 
   void _incrementCounter() {
     setState(() {
       _counter++;
+      _money += random.nextDouble() * 1.5;
     });
   }
 
@@ -49,14 +53,14 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
 
-        title: Text(widget.title),
+        title: Text(AppLocalizations.of(context).title),
       ),
       body: Center(
 
         child: Column(
-
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            Text(AppLocalizations.of(context).welcome(DateTime.now())),
             Text(
               AppLocalizations.of(context).times,
             ),
@@ -64,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
               AppLocalizations.of(context).times2(_counter),
               style: Theme.of(context).textTheme.headline4,
             ),
-            Text(AppLocalizations.of(context).welcome(1.32))
+            Text(AppLocalizations.of(context).earnings(_money))
           ],
         ),
       ),
