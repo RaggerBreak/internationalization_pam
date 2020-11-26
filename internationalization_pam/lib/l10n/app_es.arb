@@ -1,12 +1,8 @@
 {
-    "title": "Test i18n application",
-    "@title": {
-        "description": "title of the application"
-    },
+    "title": "Prueba la aplicación de localización",
 
-    "welcome": "Welcome on {date}",
+    "welcome": "Bienvenido al dia {date}",
     "@welcome": {
-        "description": "A message with a date parameter",
         "placeholders": {
             "date": {
                 "type": "DateTime",
@@ -15,16 +11,16 @@
         }
     },
 
-    "times": "You have pushed the button:",
+    "times": "Presionaste este botón:",
     "@times": {},
-    "times2": "{count, plural, =0{zero times} =1{one time} other{{count} times}}",
+    "times2": "{count, plural, =0{cero veces} =1{una vez} other{{count} veces}}",
     "@times2": {
         "placeholders": {
             "count": {}
         }
     },
 
-    "earnings": "And you have earned {number}",
+    "earnings": "te has ganado {number}",
     "@earnings": {
         "placeholders": {
             "number": {

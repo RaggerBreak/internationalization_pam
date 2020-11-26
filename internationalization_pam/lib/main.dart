@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
 
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: Locale('pl'),
+      locale: Locale('en'),
 
       title: 'Flutter Demo',
       theme: ThemeData(
